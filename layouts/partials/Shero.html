@@ -1,0 +1,43 @@
+<!--
+  Params.shero: {
+    heading: string
+    copy: string
+    image: string
+  }
+-->
+
+
+{{ with .Params.shero }}
+
+  <header
+    class='Shero __intro'
+    data-grid
+  >
+
+    <h1>{{- .heading -}}
+          
+      <abbr title='{{ $.Site.Params.licence.name }}'>LPC</abbr>
+
+    </h1>
+
+    <p><b>(She / Her)</b> {{ .copy | safeHTML }}</p>
+
+    <div class='shero-Image'>
+
+      <div id='teal'><svg viewBox='0 0 50 80' aria-hidden='true'><path d='M50,0 50,80 0,60'/></svg></div>
+
+      <div id='red'><svg viewBox='0 0 98 95' aria-hidden='true'><path d='M75,0 98,95 0,25'/></svg></div>
+
+      <picture>
+
+        <img id='shero-img' src={{ .image }} alt=''>
+
+      </picture>
+
+      <div id='yellow'><svg viewBox='0 0 82 98' aria-hidden='true'><path d='M18,0 82,98 0,98'/></svg></div>
+
+    </div>
+
+  </header>
+
+{{ end }}

@@ -1,0 +1,42 @@
+.Card {
+  @extend %content;
+  @extend %relative;
+  @extend %hidden;
+  padding: 26px 31px;
+  border-radius: 5px;
+  box-shadow: 0 3px 18px ts(.15);
+  background: #fff;
+
+  @include break {
+    padding: 46px 51px;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    color: $teal;
+  }
+
+  ul {
+    margin-top: 36px;
+  }
+
+  &::after {
+    @extend %pseudo-content;
+    @extend %absolute;
+    @include xy(0);
+    @include size(5px 100%);
+    background: $teal;
+  }
+
+  &:last-of-type {
+    h3 {
+      color: $purple;
+    }
+    
+    &::after {
+      @extend %pseudo-content;
+      @extend %absolute;
+      background: $purple;
+    }
+  }
+}

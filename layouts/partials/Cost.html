@@ -1,0 +1,20 @@
+<!--
+  Params.feesinsurance: []map[string]string
+-->
+
+
+<section
+  id='feesinsurance'
+  data-frag
+  data-grid
+>
+
+  <h3 class='outline'>Fees and Insurance</h3>
+
+  {{ range .Params.feesinsurance }}
+
+    {{ partial "Card" . }}
+
+  {{ end }}
+
+</section>

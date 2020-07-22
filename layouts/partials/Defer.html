@@ -1,0 +1,73 @@
+{{ $styles := false }}
+{{ $js := false }}
+{{ $scripts := false }}
+
+
+{{ if ne hugo.IsProduction }}
+
+  {{ $styles = resources.Get "styles/main.scss" | toCSS }}
+  
+  {{ $js = newScratch }}
+  {{ $js.Set "targetPath" "dist/main.js" }}
+  {{ $js.Set "target" "es2015" }}
+  {{ $scripts = resources.Get "scripts/main.ts" | js.Build $js.Values }}
+
+  <link
+    rel='stylesheet'
+    href='{{ $styles.RelPermalink }}'
+  >
+
+  <script src='{{ $scripts.RelPermalink }}'></script>
+
+{{ end }}
+
+
+<!-- Shero Fade In -->
+
+<script>var a=document.getElementById('shero-img');function b(){document.querySelector('.shero-Image').classList.add('__fadeIn')}a.complete?b():a.addEventListener('load',b)</script>
+
+
+<!-- Structured Data (Schema) -->
+
+{{ with .Site.Data }}
+
+  <script type='application/ld+json'>
+    {
+      "@context":"http://schema.org",
+      "@type":"Person",
+      "name":{{ .site.title }},
+      "description":{{ .site.description }},
+      "email":{{ .contact.email }},
+      "url":{{ $.Permalink | absURL }},
+      "image":{{ $.Site.Params.images.rich.url | absURL }},
+      "workLocation":{
+        "@type":"Place",
+        "faxNumber":{{ .contact.fax }},
+        "telephone":{{ .contact.phone }},
+        "address":{
+          "@type":"PostalAddress",
+          "streetAddress":{{ .contact.street }},
+          "addressLocality":{{ .contact.city }},
+          "addressRegion":{{ .contact.state }},
+          "postalCode":{{ .contact.zip }},
+          "addressCountry":"USA"
+        }
+      },
+      "makesOffer":{
+        "@type":"Offer",
+        "category":"PsychologicalTreatment"
+      },
+      "hasCredential": {
+        "@type":"EducationalOccupationalCredential",
+        "credentialCategory":{{ $.Site.Params.license.name }},
+        "license":{{ $.Site.Params.license.url }},
+        "recognizedBy":{
+          "@type":"Organization",
+          "name":{{ $.Site.Params.license.name }},
+          "url":{{ $.Site.Params.license.url }}
+        }
+      }
+    }
+  </script>
+
+{{ end }}

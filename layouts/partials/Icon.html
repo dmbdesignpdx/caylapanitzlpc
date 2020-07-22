@@ -1,0 +1,31 @@
+<!--
+  name: string
+  text: string
+-->
+
+
+<button
+  class='Icon --{{ .name }} graphical'
+  type='button'
+>
+  
+  <svg viewBox='0 0 20 20'>
+    
+    {{- if eq .name "close" -}}
+    
+      <path d='M4,4 16,16' />
+      <path d='M16,4 4,16' />
+    
+    {{- else if eq .name "open" -}}
+
+      <path d='M4,6h12' />
+      <path d='M4,10h12' />
+      <path d='M4,14h12' />
+  
+    {{- end -}}
+  
+  </svg>
+  
+  <span>{{ .text }}</span>
+
+</button>

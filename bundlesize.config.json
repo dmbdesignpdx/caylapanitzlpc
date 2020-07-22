@@ -1,0 +1,12 @@
+{
+  "files": [
+    {
+      "path": "./public/dist/main.min.js",
+      "maxSize": "14 kB"
+    },
+    {
+      "path": "./public/styles/main.min.css",
+      "maxSize": "14 kB"
+    }
+  ]
+}

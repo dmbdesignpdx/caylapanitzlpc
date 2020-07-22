@@ -1,0 +1,55 @@
+## Site Variables ##
+baseURL: https://caylapanitzlpc.com
+title: Cayla Panitz, LPC
+description: Awesome therapist.
+author:
+  name: Cayla Panitz
+
+## Params ##
+params:
+  # Theme
+  theme: "#E13364"
+
+  # Images
+  images:
+    rich:
+      url: /img/cayla-hero.jpg
+      type: image/jpeg
+    og:
+      url: /img/cayla-hero.jpg
+      type: image/jpeg
+
+  # License
+  license:
+    name: Licensed Professional Counselor
+    from: State of Oregon Board of Professional Counselors and Therapists
+    url: https://hrlb.oregon.gov/oblpct/licenseelookup/detail.asp?num=133599
+
+
+## Markup ##
+markup:
+  goldmark:
+    parser:
+      autoHeadingID: false
+    renderer:
+      unsafe: true
+
+
+## Sitemap ##
+sitemap:
+  changefreq: weekly
+  filename: sitemap.xml
+  priority: 0.9
+
+
+## Build ##
+# assetDir: /src
+enableGitInfo: true
+enableRobotsTXT: true
+disableHugoGeneratorInject: true
+disableKinds:
+  - taxonomy
+  - taxonomyTerm
+  - RSS
+enableEmoji: true
+relativeURLs: true

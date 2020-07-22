@@ -1,0 +1,34 @@
+<!--
+  link: string
+  text: string
+  outbound?: bool
+-->
+
+
+{{ if .link }}
+
+  <a
+    class='Button'
+    href='{{ .link }}'
+    {{ if .outbound }}
+      target='_blank'
+      rel='noopener noreferrer nofollow'
+    {{ end }}
+  >
+  
+    {{- .text -}}
+  
+  </a>
+
+{{ else }}
+
+  <button
+    class='Button'
+    type='button'
+  >
+  
+    {{- .text -}}
+  
+  </button>
+
+{{ end }}

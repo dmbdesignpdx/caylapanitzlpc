@@ -1,0 +1,93 @@
+.Shero {
+  @extend %strict;
+  height: 100vh;
+  text-align: center;
+  align-content: center;
+
+  h1 {
+    @extend %Playfair;
+    @extend %relative;
+    letter-spacing: .01ch;
+    font-size: 10vw;
+    margin-top: .8em;
+    justify-self: center;
+
+    &::before {
+      @extend %pseudo-content;
+      @extend %absolute;
+      @include size(8.4ch 1.1ex);
+      left: -.3ch;
+      bottom: 0;
+      z-index: -1;
+      background: lighten($yellow, 6);
+    }
+  }
+
+  abbr {
+    margin-left: .7ch;
+    font-size: 44%;
+    color: #666;
+  }
+
+  .shero-Image {
+    @extend %relative;
+    width: 58%;
+    margin: 2em auto 0;
+
+    div {
+      @extend %absolute;
+      contain: layout;
+      z-index: 1;
+      opacity: 0;
+    }
+
+    &.\__fadeIn {
+
+      div {
+        opacity: 1;
+        transition: .2s;
+      }
+    }
+  }
+
+  picture {
+    @extend %relative;
+    @extend %hidden;
+    z-index: 2;
+    border-radius: 4px;
+
+    &::before {
+      @extend %pseudo-content;
+      @extend %block;
+      padding-top: 125%;
+      background: #eaeaea;
+    }
+  }
+
+  img {
+    @extend %absolute;
+    @include ctrAbs;
+  }
+}
+
+#teal {
+  width: 15%;
+  top: 10%;
+  left: -32%;
+  fill: $yellow;
+}
+
+#red {
+  width: 64%;
+  top: -12%;
+  right: -26%;
+  fill: $red;
+}
+
+#yellow {
+  width: 32%;
+  bottom: -10%;
+  left: -14%;
+  fill: $teal;
+  z-index: 3;
+}

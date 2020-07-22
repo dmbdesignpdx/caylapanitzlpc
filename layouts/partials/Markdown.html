@@ -1,0 +1,12 @@
+{{- $multi := findRE "\n" . -}}
+
+
+{{- if gt ( len $multi ) 1 -}}
+
+  {{- . | markdownify -}}
+
+{{- else -}}
+
+  <p>{{ . | markdownify }}</p>
+
+{{- end -}}

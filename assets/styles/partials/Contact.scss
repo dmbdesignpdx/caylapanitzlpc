@@ -1,0 +1,45 @@
+#contact {
+  @extend %content;
+
+  @include break {
+    text-align: left;
+  }
+
+  h2 {
+    @extend %highlight;
+    @extend %inline;
+    
+    &::before {
+      @extend %pseudo-content;
+      width: 96%;
+      background: lighten($yellow, 6);
+    }
+  }
+
+  dl {
+
+    div {
+      margin-top: 1em;
+    }
+  }
+
+  dt, dd {
+    display: inline-block;
+    vertical-align: text-top;
+  }
+
+  dt {
+
+    &::after {
+      content: ': ';
+    }
+  }
+
+  a {
+    color: $teal;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

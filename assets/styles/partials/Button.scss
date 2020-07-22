@@ -1,0 +1,13 @@
+.Button {
+  padding: .7ex 1.5ch;
+  background: darken($teal, 3);
+  border-radius: 4px;
+  color: $white;
+  border: 1px solid darken($teal, 3);
+  transition: .2s;
+
+  &:hover {
+    background: $white;
+    color: $teal;
+  }
+}

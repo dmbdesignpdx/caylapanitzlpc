@@ -1,0 +1,183 @@
+/*
+ * Foundation.css
+ * Resets, normalizations, grid, breakpoints, and more.
+ * v1.1.0
+ *
+ * Put what you need in critical, the rest at the begining of your
+ * main stylesheet...
+ * And remove what you don't use!
+ *
+ * Contents:
+ * 1. Font Face
+ * 2. Meta Viewport
+ * 3. Resets
+ * 4. Normalizations
+ * 5. Helpers
+ * 6. Simple Grid
+ * 7. Browser Specific Rules
+ * 8. OS Rules
+ *
+ * Note: 'Edge' refers to versions 12 to 18 (Non-Chromium)
+ */
+
+
+
+
+/*
+ * 1. Font Face
+ */
+
+@font-face {
+  src:
+    url('/fonts/playfair-display-900.woff2') format('woff2'),
+    url('/fonts/playfair-display-900.woff') format('woff');
+  font-family: Playfair;
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  src:
+    url('/fonts/heebo-400.woff2') format('woff2'),
+    url('/fonts/heebo-400.woff') format('woff');
+  font-family: Heebo;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  src:
+    url('/fonts/heebo-700.woff2') format('woff2'),
+    url('/fonts/heebo-700.woff') format('woff');
+  font-family: Heebo;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+
+/*
+ * 2. Meta Viewport for IE 10+, Edge
+ */
+
+ @-ms-viewport {
+  width: device-width;
+}
+
+
+/*
+ * 3. Resets
+ */
+
+body,
+h1,
+p {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+/*
+ * 4. Normalizations
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font: 400 18px Heebo, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  color: $black;
+}
+
+body {
+  background: $white;
+  -ms-text-size-adjust: 100%;  /* Edge, IE Mobile */
+  -moz-text-size-adjust: 100%;  /* Firefox Android */
+  -webkit-text-size-adjust: 100%;  /* iOS Safari 5+ */
+  text-size-adjust: 100%;
+  touch-action: manipulation;
+  -webkit-overflow-scrolling: touch;
+  -moz-osx-font-smoothing: grayscale;  /* Firefox Mac OS */
+  -webkit-font-smoothing: antialiased; /* Chrome, Safari Mac OS */
+  -webkit-tap-highlight-color: transparent;
+  -ms-overflow-style: -ms-autohiding-scrollbar; /* Mimic Mac OS for Windows */
+}
+
+picture,
+img,
+svg {
+  display: block;
+}
+
+svg {
+  @include transform-origin(center);
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  font-weight: 700;
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  line-height: 1.2;
+  text-rendering: geometricPrecision;
+}
+
+p {
+  letter-spacing: 0.02ch;
+  line-height: 1.5;
+  -ms-hyphens: none;  /* IE 10+, Edge */
+  -moz-hyphens: none;  /* Firefox < 45 */
+  -webkit-hyphens: none;  /* Safari 5+ */
+  hyphens: none;
+}
+
+
+
+
+
+/*
+ * 6. Simple Grid with Breakpoints
+ */
+
+[data-wrap],
+[data-grid] {
+  padding: 0 18px;
+  margin: auto;
+}
+
+[data-grid] {
+  display: grid;
+  grid: auto / repeat(12, 1fr);
+  grid-column-gap: 18px;
+  column-gap: 18px;
+}
+
+[data-grid] > * {
+  grid-column: 1 / -1;
+}
+
+
+/* 
+ * 8. User Preferences
+ */
+
+/* Reduced Motion */
+@media (prefers-reduced-motion:reduce) {
+
+}
+
+/* Dark Theme */
+@media (prefers-color-scheme:dark) {
+
+}

@@ -1,0 +1,46 @@
+#nav {
+  transition: transform .3s;
+
+  &.\__hide {
+    transform: translateY(-101%);
+  }
+}
+
+.nav-Menu {
+  transition: transform .2s;
+  
+  @for $i from 1 to 6 {
+    $delay: $i * .1s;
+    
+    a:nth-of-type(#{$i}) {
+      transition: .2s $delay;
+    }
+  }
+
+  &.\__open {
+  
+    &,
+    & a {
+      transform: translateX(101%);
+    }
+    
+    a {
+      opacity: 1;
+    }
+  }
+}
+
+
+.\__fadeUp {
+  transition: .6s;
+
+  &:nth-child(2) {
+    transition: .6s .3s;
+  }
+}
+
+.\__start .\__fadeUp {
+  transition: 0s;
+  transform: translateY(30%);
+  opacity: 0;
+}

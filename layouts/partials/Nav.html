@@ -1,0 +1,39 @@
+<!--
+  Site.Data.site: {
+    nav: []string
+  }
+-->
+
+
+<nav id='nav'>
+
+  <div data-wrap>
+
+    {{ $open := newScratch }}
+    {{ $open.Set "name" "open" }}
+    {{ $open.Set "text" "Open menu" }}
+    {{ partial "Icon" $open.Values }}
+
+    <div class='nav-Menu'>
+
+      {{ range .Site.Data.site.nav }}
+
+        <a href='/#{{ . | anchorize }}'>{{ . }}</a>
+        
+      {{ end }}
+
+      {{ $close := newScratch }}
+      {{ $close.Set "name" "close" }}
+      {{ $close.Set "text" "Close menu" }}
+      {{ partial "Icon" $close.Values }}
+    
+    </div>
+    
+    {{ $contact := newScratch }}
+    {{ $contact.Set "text" "Contact" }}
+    {{ $contact.Set "link" "/#contact" }}
+    {{ partial "Button" $contact.Values }}
+
+  </div>
+
+</nav>

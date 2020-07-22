@@ -1,0 +1,8 @@
+#resources {
+  @extend %content;
+  @extend %visibility-auto;
+
+  @include break {
+    text-align: left;
+  }
+}

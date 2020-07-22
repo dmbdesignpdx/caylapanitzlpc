@@ -1,0 +1,31 @@
+@mixin break($arg:small) {
+  $size: 1024px;
+  
+  // Tablet Portrait
+  @if ($arg == tablet) {
+    $size: 768px;
+  }
+ 
+  // small: tablet portrait / small desktop
+ 
+  // Standard Desktop
+  @if ($arg == desktop) {
+    $size: 1280px;
+  }
+  
+  // Large Desktop
+  @if ($arg == large) {
+    $size: 1680px;
+  }
+
+  @if ($arg != iphone) {
+    @media (min-width:#{$size}) {
+      @content;
+    }
+  } @else {
+    // Yay, Apple
+    @media (min-width:810px) and (max-height:416px) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+#feesinsurance {
+  @extend %content;
+  padding-bottom: 30px;
+
+  .Card {
+    margin-top: 30px;
+
+    @include break {
+      grid-column: span 6;
+
+      &:first-of-type {
+        margin-right: 30px;
+      }
+    }
+  }
+}

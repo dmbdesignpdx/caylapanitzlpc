@@ -1,0 +1,33 @@
+<!--
+  heading: string
+  copy: string
+  image: {
+    url: string
+    alt?: string
+  }
+  ctx?: Context
+-->
+
+
+<section
+  id={{ .heading | anchorize }}
+  class='ZigZag __lazy'
+  data-frag
+  data-grid
+>
+
+  <div class='zz-Text __fadeUp'>
+
+    <h2>{{ .heading }}</h2>
+  
+    {{ partial "Markdown" .copy }}
+
+  </div>
+
+  <picture class='zz-Image __fadeUp'>
+  
+    <img src='{{ .image.url }}' alt='{{ .image.alt }}' />
+  
+  </picture>
+
+</section>

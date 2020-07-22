@@ -1,0 +1,53 @@
+<!--
+  Site.Data.footer: {
+    resources: []Resource
+    copyright: string
+  }
+  type Resource {
+    name: string
+    number: string
+  }
+-->
+
+
+{{ with .Site.Data.footer }}
+
+  <footer id='footer'>
+
+    <div data-grid>
+
+      <section>
+
+        <h4>Other resources</h4>
+
+        <ul>
+
+          {{- range .resources -}}
+
+            {{- $href := print "href=sms:" .number -}}
+
+            {{- if ge (len .number) 7 -}}
+              {{- $href = print "href=tel:+1-" .number -}}
+            {{- end -}}
+
+            <li>{{ .name }}: <a {{ $href | safeHTMLAttr }}>{{ .number }}</a>
+
+          {{- end -}}
+
+        </ul>
+
+      </section>
+
+      <section>
+
+        <h4 class='outline'>Copyright</h4>
+
+        <p><small>{{ .copyright }}</small></p>
+
+      </section>
+
+    </div>
+
+  </footer>
+
+{{ end }}

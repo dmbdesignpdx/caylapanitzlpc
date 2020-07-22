@@ -1,0 +1,228 @@
+/*
+* Foundation.css
+* Resets, normalizations, grid, breakpoints, and more.
+* v1.1.0
+*
+* Put what you need in critical, the rest at the begining of your
+* master stylesheet...
+* And remove what you don't use!
+*
+* Contents:
+* 1. Font Face
+* 2. Meta Viewport
+* 3. Resets
+* 4. Normalizations
+* 5. Helpers
+* 6. Simple Grid
+* 7. Browser Specific Rules
+* 8. OS Rules
+*
+* Note: 'Edge' refers to versions 12 to 18 (Non-Chromium)
+*/
+
+
+
+
+/*
+* 3. Resets
+*/
+
+
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+ul,
+dl,
+menu,
+dd,
+hr,
+pre,
+input,
+select,
+textarea,
+fieldset,
+legend,
+figure,
+blockquote,
+iframe,
+button {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+input,
+select,
+progress,
+meter {
+  -moz-appearance: none;  /* Firefox */
+  -webkit-appearance: none;  /* Chrome, Safari */
+}
+
+button {
+font: inherit;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+
+li::before {
+  content: '\200B';
+  /* Uncomment if some lists will use 'list-style' */
+  /*
+  position: absolute;
+  */
+}
+
+abbr {
+  text-decoration: none;
+}
+
+dfn,
+address {
+  font-style: normal;
+}
+
+/*
+* 4. Normalizations
+*/
+
+
+
+
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+
+object,
+iframe,
+embed {
+  display: block;
+}
+
+
+select,
+button,
+[role=button] {
+  cursor: pointer;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  text-rendering: geometricPrecision;
+}
+
+
+:focus {
+outline: 0;
+}
+
+::-moz-focus-inner {
+border: 0;
+}
+
+
+/*
+* 5. Helpers
+*/
+
+/* Long bodies of text */
+.long {
+  text-rendering: optimizeSpeed;
+}
+
+/* No break */
+.nobr {
+  white-space: nowrap;
+}
+
+
+
+
+
+/* 
+* 7. Browser Specific Rules
+*/
+
+/* Chrome & Opera */
+@supports (-webkit-app-region:drag) {
+
+}
+
+/* Safari */
+@supports (-webkit-marquee:revert) {
+
+}
+
+/* Firefox */
+@supports (-moz-orient:vertical) {
+
+}
+
+/* Edge */
+@supports (-ms-ime-align:auto) {
+
+}
+
+
+.outline,
+.graphical span {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+}
+
+[data-frag] {
+  padding-top: 70px;
+
+  @include break {
+    padding-top: 100px;
+
+    &:not(:first-of-type) {
+      margin-top: 100px;
+    }
+  }
+}
+
+p,
+ul,
+h4 {
+  margin-top: 1em;
+}
+
+li {
+margin-top: .6em;
+line-height: 1.4;
+}
+
+p a {
+  color: $teal;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h2,
+h3 {
+  font-family: Playfair, serif;
+}
+
+
+h2 {
+  font-size: 2rem;
+}

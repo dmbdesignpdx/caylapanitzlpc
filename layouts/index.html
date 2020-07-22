@@ -1,0 +1,25 @@
+{{ define "SITE" }}
+
+
+  {{ partial "Shero" . }}
+
+  {{ partial "Nav" . }}
+
+  <main>
+
+    {{ range .Params.sections }}
+
+      {{ partial "ZigZag" . }}
+    
+    {{ end }}
+
+    {{ partial "About" . }}
+
+    {{ partial "Cost" . }}
+
+    {{ partial "Contact" . }}
+
+  </main>
+
+
+{{ end }}

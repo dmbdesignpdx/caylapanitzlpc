@@ -1,0 +1,14 @@
+#expertise {
+  @extend %content;
+
+  h2 {
+    @extend %highlight;
+    @extend %inline;
+    
+    &::before {
+      @extend %pseudo-content;
+      width: 96%;
+      background: lighten($red, 10);
+    }
+  }
+}

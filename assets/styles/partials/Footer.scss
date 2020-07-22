@@ -1,0 +1,41 @@
+#footer {
+  @extend %content;
+  @extend %visibility-auto;
+  padding: 6vw 0 12vw;
+  margin-top: 24vw;
+  background: $black;
+
+  @include break {
+    margin-top: 12vw;
+  }
+
+  small {
+    font-size: 1rem;
+    opacity: .8;
+  }
+
+  div {
+    color: $white;
+  }
+
+  a {
+    color: $yellow;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  section:first-child {
+    @include break {
+      grid-column: span 7;
+    }
+  }
+
+  section:last-child {
+    @include break {
+      grid-column: span 5;
+    } 
+  }
+}

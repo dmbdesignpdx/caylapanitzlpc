@@ -1,0 +1,23 @@
+#about {
+  @extend %content;
+
+  h2,
+  p {
+    justify-self: start;
+    
+    @include break {
+      grid-column: 2 / 12;
+      justify-self: center;
+    }
+  }
+
+  h2 {
+    @extend %highlight;
+    
+    &::before {
+      @extend %pseudo-content;
+      width: 96%;
+      background: lighten($yellow, 6);
+    }
+  }
+}

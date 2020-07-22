@@ -1,0 +1,77 @@
+<!--
+  Site.Data.contact: {
+    email: string
+    phone: string
+    fax: string
+    street: string
+    city: string
+    state: string
+    zip: string
+  }
+-->
+
+
+{{ with .Site.Data.contact }}
+
+  <section
+    id='contact'
+    data-frag
+    data-wrap
+  >
+
+    <h2>Contact</h2>
+
+    <dl>
+      
+      <div>
+      
+        <dt>Email</dt>
+        
+        <dd><a href='mailto:{{ .email }}'>{{ .email }}</a></dd>
+      
+      </div>
+    
+      <div>
+      
+        <dt>Phone</dt>
+
+        <dd><a href='tel:+1{{ replace .phone "-" "" }}'>{{ .phone }}</a></dd>
+      
+      </div>
+      
+      <div>
+        
+        <dt>Address</dt>
+        
+        <dd>
+          
+          <a
+            href='https://goo.gl/maps/pAjwsCT1NZcqqbBT8'
+            target='_blank'
+            rel='nofollow noopener noreferrer'
+          >
+    
+            {{- .street -}}<br>
+            {{- .city -}},
+            {{- print " " .state -}}
+            {{- print " " .zip -}}
+      
+          </a>
+        
+        </dd>
+      
+      </div>
+
+      <div>
+        
+        <dt>Fax</dt>
+    
+        <dd>{{ .fax }}</dd>
+      
+      </div>
+
+    </dl>
+
+  </section>
+
+{{ end }}

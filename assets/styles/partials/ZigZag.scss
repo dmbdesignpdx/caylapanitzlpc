@@ -1,0 +1,57 @@
+.ZigZag {
+  @extend %layout;
+  @extend %relative;
+  align-items: center;
+
+  @include break {
+    text-align: left;
+  }
+
+  h2 {
+    @extend %highlight;
+    @extend %inline;
+    
+    &::before {
+      @extend %pseudo-content;
+      width: 96%;
+      background: lighten($teal, 8);
+
+      @at-root
+      .ZigZag:nth-of-type(2) h2::before {
+        background: lighten($purple, 26);
+      }
+      
+      @at-root
+      .ZigZag:nth-of-type(3) h2::before {
+        background: lighten($red, 14);
+      }
+    }
+  }
+}
+
+.zz-Text {
+  
+  @include break {
+    grid-column: 7 / -1;
+
+    .ZigZag:nth-of-type(even) & {
+      grid-column: 1 / 7;
+    }
+  }
+}
+
+.zz-Image {
+  @extend %hidden;
+  margin-top: 30px;
+  border-radius: 4px;
+
+  @include break {
+    margin: 0;
+    grid-column: 1 / 6;
+    grid-row: 1;
+
+    .ZigZag:nth-of-type(even) & {
+      grid-column: 8 / -1;
+    }
+  }
+}
