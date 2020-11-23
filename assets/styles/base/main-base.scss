@@ -31,42 +31,12 @@
 h2,
 h3,
 h4,
-h5,
-h6,
-ol,
-ul,
-dl,
-menu,
-dd,
-hr,
-pre,
-input,
-select,
-textarea,
-fieldset,
-legend,
-figure,
-blockquote,
-iframe,
-button {
-  padding: 0;
-  margin: 0;
+ul {
+  @include p;
+  @include m;
   border: 0;
 }
 
-input,
-select,
-progress,
-meter {
-  -moz-appearance: none;  /* Firefox */
-  -webkit-appearance: none;  /* Chrome, Safari */
-}
-
-button {
-font: inherit;
-}
-
-ol,
 ul {
   list-style: none;
 }
@@ -84,7 +54,6 @@ abbr {
   text-decoration: none;
 }
 
-dfn,
 address {
   font-style: normal;
 }
@@ -94,44 +63,20 @@ address {
 */
 
 
-
-
-input,
-select,
-textarea {
-  font: inherit;
-}
-
-
-object,
-iframe,
-embed {
-  display: block;
-}
-
-
-select,
-button,
-[role=button] {
-  cursor: pointer;
-}
-
 h2,
 h3,
-h4,
-h5,
-h6 {
+h4 {
   line-height: 1.2;
   text-rendering: geometricPrecision;
 }
 
 
 :focus {
-outline: 0;
+  outline: 0;
 }
 
 ::-moz-focus-inner {
-border: 0;
+  border: 0;
 }
 
 
@@ -140,60 +85,32 @@ border: 0;
 */
 
 /* Long bodies of text */
-.long {
-  text-rendering: optimizeSpeed;
-}
+// .long {
+//   text-rendering: optimizeSpeed;
+// }
 
 /* No break */
-.nobr {
-  white-space: nowrap;
-}
+// .nobr {
+//   white-space: nowrap;
+// }
 
 
-
-
-
-/* 
-* 7. Browser Specific Rules
-*/
-
-/* Chrome & Opera */
-@supports (-webkit-app-region:drag) {
-
-}
-
-/* Safari */
-@supports (-webkit-marquee:revert) {
-
-}
-
-/* Firefox */
-@supports (-moz-orient:vertical) {
-
-}
-
-/* Edge */
-@supports (-ms-ime-align:auto) {
-
-}
-
-
-.outline,
-.graphical span {
-  width: 1px;
-  height: 1px;
-  position: absolute;
-  overflow: hidden;
-}
+// .outline,
+// .graphical span {
+//   width: 1px;
+//   height: 1px;
+//   position: absolute;
+//   overflow: hidden;
+// }
 
 [data-frag] {
-  padding-top: 70px;
+  @include p-top(70px);
 
   @include break {
-    padding-top: 100px;
+    @include p-top(100px);
 
     &:not(:first-of-type) {
-      margin-top: 100px;
+      @include m-top(100px);
     }
   }
 }
@@ -201,12 +118,12 @@ border: 0;
 p,
 ul,
 h4 {
-  margin-top: 1em;
+  @include m-top(1em);
 }
 
 li {
-margin-top: .6em;
-line-height: 1.4;
+  @include m-top(.6em);
+  line-height: 1.4;
 }
 
 p a {

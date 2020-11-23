@@ -2,8 +2,8 @@
 'vendor/turntable',
 'base/variables',
 'base/mixins',
-'base/crit-base',
 'base/extends',
+'base/crit-base',
 'partials/Nav',
 'partials/Shero',
 'partials/Button'
@@ -18,8 +18,8 @@
 
   [data-wrap],
   [data-grid] {
-    padding-left: 24px;
-    padding-right: 24px;
+    @include p-left(24px);
+    @include p-right(24px);
   }
 
   [data-grid] {
@@ -37,9 +37,9 @@
       grid-column: 3 / 11;
     }
 
-    .hero-Image {
-      width: 40%;
-      margin-top: 3em;
+    .shero-Image {
+      @include w(40%);
+      @include m-top(3em);
     }
   }
 
@@ -48,8 +48,8 @@
 @include break(iphone) {
   [data-wrap],
   [data-grid] {
-    padding-right: env(safe-area-inset-right);
-    padding-left: env(safe-area-inset-left);
+    @include p-left(env(safe-area-inset-right));
+    @include p-right(env(safe-area-inset-left));
   }
 }
 
@@ -61,10 +61,10 @@
 
   [data-wrap],
   [data-grid] {
-    width: 84%;
-    max-width: 1436px;
-    padding-left: 30px;
-    padding-right: 30px;
+    @include w(84%);
+    @include max-w(1436px);
+    @include p-left(30px);
+    @include p-right(30px);
   }
 
   [data-grid] {
@@ -77,21 +77,20 @@
   }
 
   #nav {
-    height: 90px;
+    @include h(90px);
 
     .nav-Menu {
+      @include size(auto);
       position: static;
-      width: auto;
-      height: auto;
       padding: 0;
       flex-direction: row;
       box-shadow: none;
       transition: none;
 
       a {
-        padding: 1ex 0;
-        margin-right: 4ch;
-        left: 0;
+        @include p(1ex 0);
+        @include m-right(4ch);
+        @include l;
         font-size: 1rem;
         opacity: 1;
         transition: .2s color;
@@ -101,7 +100,7 @@
         }
 
         &:first-child {
-          margin-top: 0;
+          @include m-top;
         }
       }
     }
@@ -117,7 +116,7 @@
     }
   
     h1 {
-      margin-top: auto;
+      @include m-top(auto);
       font-size: 4.4vw;
       justify-self: start;
 
@@ -127,7 +126,7 @@
     }
   
     .shero-Image {
-      width: 50%;
+      @include w(50%);
       margin: auto;
       grid-column: 7  / -1;
       grid-row: 1 / -1;
@@ -135,19 +134,19 @@
   }
 
   #teal {
-    left: -50%;
+    @include l(-50%);
     fill: $teal;
   }
   
   #red {
-    width: 80%;
-    top: -18%;
+    @include w(80%);
+    @include t(-18%);
   }
   
   #yellow {
-    width: 40%;
-    bottom: -22%;
-    left: -18%;
+    @include w(40%);
+    @include l(-18%);
+    @include b(-22%);
     fill: $yellow;
   }
 

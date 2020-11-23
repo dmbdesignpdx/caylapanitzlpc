@@ -13,7 +13,7 @@
     
     &::before {
       @extend %pseudo-content;
-      width: 96%;
+      @include w(96%);
       background: lighten($teal, 8);
 
       @at-root
@@ -42,11 +42,11 @@
 
 .zz-Image {
   @extend %hidden;
-  margin-top: 30px;
+  @include m-top(30px);
   border-radius: 4px;
 
   @include break {
-    margin: 0;
+    @include m;
     grid-column: 1 / 6;
     grid-row: 1;
 

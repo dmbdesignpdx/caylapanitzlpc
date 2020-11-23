@@ -1,12 +1,12 @@
 #footer {
   @extend %content;
   @extend %visibility-auto;
-  padding: 6vw 0 12vw;
-  margin-top: 24vw;
+  @include p(6vw 0 12vw);
+  @include m-top(24vw);
   background: $black;
 
   @include break {
-    margin-top: 12vw;
+    @include m-top(12vw);
   }
 
   small {

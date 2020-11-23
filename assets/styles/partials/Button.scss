@@ -1,5 +1,5 @@
 .Button {
-  padding: .7ex 1.5ch;
+  @include p(.7ex 1.5ch);
   background: darken($teal, 3);
   border-radius: 4px;
   color: $white;

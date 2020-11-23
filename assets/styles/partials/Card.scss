@@ -2,13 +2,13 @@
   @extend %content;
   @extend %relative;
   @extend %hidden;
-  padding: 26px 31px;
+  @include p(26px 31px);
   border-radius: 5px;
   box-shadow: 0 3px 18px ts(.15);
   background: #fff;
 
   @include break {
-    padding: 46px 51px;
+    @include p(46px 51px);
   }
 
   h3 {
@@ -17,7 +17,7 @@
   }
 
   ul {
-    margin-top: 36px;
+    @include m-top(36px);
   }
 
   &::after {

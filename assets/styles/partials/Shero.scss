@@ -1,16 +1,16 @@
 .Shero {
   @extend %strict;
-  height: 100vh;
-  text-align: center;
+  @include h(100vh);
   align-content: center;
+  text-align: center;
 
   h1 {
     @extend %Playfair;
     @extend %relative;
-    letter-spacing: .01ch;
-    font-size: 10vw;
-    margin-top: .8em;
+    @include m-top(.8em);
     justify-self: center;
+    font-size: 10vw;
+    letter-spacing: .01ch;
 
     &::before {
       @extend %pseudo-content;
@@ -24,15 +24,15 @@
   }
 
   abbr {
-    margin-left: .7ch;
+    @include m-left(.7ch);
     font-size: 44%;
     color: #666;
   }
 
   .shero-Image {
     @extend %relative;
-    width: 58%;
-    margin: 2em auto 0;
+    @include w(58%);
+    @include m(2em auto 0);
 
     div {
       @extend %absolute;
@@ -59,35 +59,38 @@
     &::before {
       @extend %pseudo-content;
       @extend %block;
-      padding-top: 125%;
+      @include p-top(125%);
       background: #eaeaea;
     }
   }
 
   img {
     @extend %absolute;
-    @include ctrAbs;
+    @include w;
+    @include h(100%);
+    @include l(-6%);
+    @include t(0);
   }
 }
 
 #teal {
-  width: 15%;
-  top: 10%;
-  left: -32%;
+  @include w(15%);
+  @include l(-32%);
+  @include t(10%);
   fill: $yellow;
 }
 
 #red {
-  width: 64%;
-  top: -12%;
-  right: -26%;
+  @include w(64%);
+  @include t(-12%);
+  @include r(-26%);
   fill: $red;
 }
 
 #yellow {
-  width: 32%;
-  bottom: -10%;
-  left: -14%;
-  fill: $teal;
+  @include w(32%);
+  @include l(-14%);
+  @include b(-10%);
   z-index: 3;
+  fill: $teal;
 }

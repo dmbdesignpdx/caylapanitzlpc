@@ -1,11 +1,11 @@
 #nav {
   @include size(100% 54px);
   @include transition(box-shadow .3s);
+  @include t;
   position: fixed;
-  top: 0;
-  background: $white;
-  z-index: 9;
   contain: layout size;
+  z-index: 9;
+  background: $white;
 
   &.\__shadow {
     box-shadow: 0 1px 3px ts(.2);
@@ -14,7 +14,7 @@
   & > div {
     @extend %box;
     @include align-items(center);
-    height: 100%;
+    @include h(100%);
   }
 
   svg {
@@ -28,13 +28,12 @@
   }
 
   .Button {
-    margin-left: auto;
+    @include m-left(auto);
   }
 }
 
 .Icon {
-  width: 44px;
-  height: 44px;
+  @include size(44px);
 }
 
 .nav-Menu {
@@ -42,7 +41,7 @@
   @include size(100vw 100vh);
   @include xy(-101% 0);
   @include flex-direction(column);
-  padding: 20px;
+  @include p(20px);
   position: absolute;
   background: $white;
   box-shadow: 1px 0 4px ts(.2);
@@ -50,13 +49,13 @@
   a {
     @include order(1);
     @extend %relative;
-    padding: 2ex 0;
-    left: -101%;
+    @include p(2ex 0);
+    @include l(-101%);
     font-size: 1.4rem;
     opacity: 0;
 
     &:first-child {
-      margin-top: 1em;
+      @include m-top(1em);
     }
   }
 }

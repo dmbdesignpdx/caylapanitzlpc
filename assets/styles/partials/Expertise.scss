@@ -7,7 +7,7 @@
     
     &::before {
       @extend %pseudo-content;
-      width: 96%;
+      @include w(96%);
       background: lighten($red, 10);
     }
   }

@@ -74,9 +74,8 @@
 body,
 h1,
 p {
-  padding: 0;
-  margin: 0;
-  border: 0;
+  @include p;
+  @include m;
 }
 
 /*
@@ -96,10 +95,8 @@ p {
 
 body {
   background: $white;
-  -ms-text-size-adjust: 100%;  /* Edge, IE Mobile */
-  -moz-text-size-adjust: 100%;  /* Firefox Android */
-  -webkit-text-size-adjust: 100%;  /* iOS Safari 5+ */
-  text-size-adjust: 100%;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
   touch-action: manipulation;
   -webkit-overflow-scrolling: touch;
   -moz-osx-font-smoothing: grayscale;  /* Firefox Mac OS */
@@ -115,11 +112,11 @@ svg {
 }
 
 svg {
-  @include transform-origin(center);
+  transform-origin: center;
 }
 
 img {
-  width: 100%;
+  @include w(100%);
 }
 
 a {
@@ -136,8 +133,7 @@ h1 {
 p {
   letter-spacing: 0.02ch;
   line-height: 1.5;
-  -ms-hyphens: none;  /* IE 10+, Edge */
-  -moz-hyphens: none;  /* Firefox < 45 */
+  -ms-hyphens: none;  /* Edge */
   -webkit-hyphens: none;  /* Safari 5+ */
   hyphens: none;
 }
@@ -152,8 +148,8 @@ p {
 
 [data-wrap],
 [data-grid] {
-  padding: 0 18px;
-  margin: auto;
+  @include p(0 18px);
+  @include m(auto);
 }
 
 [data-grid] {
@@ -173,11 +169,11 @@ p {
  */
 
 /* Reduced Motion */
-@media (prefers-reduced-motion:reduce) {
+// @media (prefers-reduced-motion:reduce) {
 
-}
+// }
 
 /* Dark Theme */
-@media (prefers-color-scheme:dark) {
+// @media (prefers-color-scheme:dark) {
 
-}
+// }
