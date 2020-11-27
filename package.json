@@ -25,10 +25,10 @@
   },
   "devDependencies": {
     "@types/body-scroll-lock": "^2.6.1",
-    "@types/node": "^14.14.9",
+    "@types/node": "^14.14.10",
     "@types/smooth-scroll": "^16.1.0",
-    "@typescript-eslint/eslint-plugin": "^4.8.1",
-    "@typescript-eslint/parser": "^4.8.1",
+    "@typescript-eslint/eslint-plugin": "^4.8.2",
+    "@typescript-eslint/parser": "^4.8.2",
     "bundlesize": "^0.18.0",
     "eslint": "^7.14.0",
     "eslint-utils": "^2.1.0",
