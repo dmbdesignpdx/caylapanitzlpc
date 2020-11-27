@@ -1,7 +1,7 @@
 #nav {
-  @include size(100% 54px);
-  @include transition(box-shadow .3s);
+  @include wh(100% 54px);
   @include t;
+  @include transition(box-shadow .3s);
   position: fixed;
   contain: layout size;
   z-index: 9;
@@ -13,8 +13,8 @@
 
   & > div {
     @extend %box;
-    @include align-items(center);
     @include h(100%);
+    @include align-items(center);
   }
 
   svg {
@@ -33,24 +33,24 @@
 }
 
 .Icon {
-  @include size(44px);
+  @include wh(44px);
 }
 
 .nav-Menu {
   @extend %box;
-  @include size(100vw 100vh);
+  @include wh(100vw 100vh);
+  @include p(20px);
   @include xy(-101% 0);
   @include flex-direction(column);
-  @include p(20px);
   position: absolute;
   background: $white;
   box-shadow: 1px 0 4px ts(.2);
   
   a {
-    @include order(1);
     @extend %relative;
     @include p(2ex 0);
     @include l(-101%);
+    @include order(1);
     font-size: 1.4rem;
     opacity: 0;
 

@@ -53,6 +53,15 @@
   max-block-size: $arg;
 }
 
+@mixin wh($arg:auto) {
+  @if length($arg) > 1 {
+    inline-size: nth($arg, 1);
+    block-size: nth($arg, 2);
+  }
+  inline-size: $arg;
+  block-size: $arg;
+}
+
 // Padding //
 
 @mixin p($arg:0) {

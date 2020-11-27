@@ -1,8 +1,20 @@
+%z1 {
+  z-index: 1;
+}
+
+%z2 {
+  z-index: 2;
+}
+
 .Shero {
   @extend %strict;
   @include h(100vh);
   align-content: center;
   text-align: center;
+
+  h1, p {
+    @extend %z2;
+  }
 
   h1 {
     @extend %Playfair;
@@ -31,13 +43,14 @@
 
   .shero-Image {
     @extend %relative;
+    @extend %z1;
     @include w(58%);
     @include m(2em auto 0);
 
     div {
       @extend %absolute;
+      @extend %z1;
       contain: layout;
-      z-index: 1;
       opacity: 0;
     }
 
@@ -53,7 +66,7 @@
   picture {
     @extend %relative;
     @extend %hidden;
-    z-index: 2;
+    @extend %z2;
     border-radius: 4px;
 
     &::before {

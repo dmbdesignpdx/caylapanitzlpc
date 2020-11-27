@@ -73,7 +73,9 @@
 
 body,
 h1,
-p {
+p,
+button {
+  border: 0;
   @include p;
   @include m;
 }
@@ -177,3 +179,10 @@ p {
 // @media (prefers-color-scheme:dark) {
 
 // }
+
+
+.graphical span {
+  @include wh(1px);
+  position: absolute;
+  overflow: hidden;
+}

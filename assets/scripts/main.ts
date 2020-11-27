@@ -73,7 +73,8 @@ const parallax = (): void => {
     positions.YELLOW = [fastY, slowY];
     positions.RED = [midY, slowY];
     positions.TEAL = [slowY, slowY];
-  } 
+  }
+
   /* else {
     toggleChange('auto');
   } */
