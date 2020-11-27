@@ -8,16 +8,16 @@ author:
 ## Params ##
 params:
   # Theme
-  theme: "#E13364"
+  theme: "#FFEB8C"
 
   # Images
   images:
     rich:
-      url: /img/cayla-hero.jpg
-      type: image/jpeg
+      url: /img/cayla-panitz-og.png
+      type: image/png
     og:
-      url: /img/cayla-hero.jpg
-      type: image/jpeg
+      url: /img/cayla-panitz-og.png
+      type: image/png
 
   # License
   license:
