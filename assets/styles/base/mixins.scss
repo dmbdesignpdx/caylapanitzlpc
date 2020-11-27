@@ -134,18 +134,22 @@
 // Position //
 
 @mixin t($arg:0) {
+  top: $arg;
   inset-block-start: $arg;
 }
 
 @mixin l($arg:0) {
+  left: $arg;
   inset-inline-start: $arg;
 }
 
 @mixin b($arg:0) {
+  bottom: $arg;
   inset-block-end: $arg;
 }
 
 @mixin r($arg:0) {
+  right: $arg;
   inset-inline-end: $arg;
 }
 
