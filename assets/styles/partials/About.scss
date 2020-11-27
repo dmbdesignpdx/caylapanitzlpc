@@ -7,12 +7,15 @@
     
     @include break {
       grid-column: 2 / 12;
-      justify-self: center;
     }
   }
 
   h2 {
     @extend %highlight;
+
+    @include break {
+      justify-self: center;
+    }
     
     &::before {
       @extend %pseudo-content;

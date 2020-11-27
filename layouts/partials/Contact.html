@@ -21,30 +21,28 @@
 
     <h2>Contact</h2>
 
-    <dl>
+    <ul>
       
-      <div>
+      <li>
       
-        <dt>Email</dt>
+        <span>Email</span>
         
-        <dd><a href='mailto:{{ .email }}'>{{ .email }}</a></dd>
+        <a href='mailto:{{ .email }}'>{{ .email }}</a>
       
-      </div>
+      </li>
     
-      <div>
+      <li>
       
-        <dt>Phone</dt>
+        <span>Phone</span>
 
-        <dd><a href='tel:+1{{ replace .phone "-" "" }}'>{{ .phone }}</a></dd>
+        <a href='tel:+1{{ replace .phone "-" "" }}'>{{ .phone }}</a>
       
-      </div>
+      </li>
       
-      <div>
+      <li>
         
-        <dt>Address</dt>
+        <span>Address</span>
         
-        <dd>
-          
           <a
             href='https://goo.gl/maps/pAjwsCT1NZcqqbBT8'
             target='_blank'
@@ -57,20 +55,18 @@
             {{- print " " .zip -}}
       
           </a>
-        
-        </dd>
       
-      </div>
+      </li>
 
-      <div>
+      <li>
         
-        <dt>Fax</dt>
+        <span>Fax</span>
     
-        <dd>{{ .fax }}</dd>
+        {{ .fax }}
       
-      </div>
+      </li>
 
-    </dl>
+    </ul>
 
   </section>
 

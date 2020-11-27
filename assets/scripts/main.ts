@@ -35,27 +35,27 @@ const parallax = (): void => {
       { transform: `translateY(-${positions.YELLOW[0]}px)` },
       { transform: `translateY(-${fastY}px)` },
     ], triProps);
-    
+
     RED_DIV.animate([
       { transform: `translateY(-${positions.RED[0]}px)` },
       { transform: `translateY(-${midY}px)` },
     ], triProps);
-    
+
     TEAL_DIV.animate([
       { transform: `translateY(-${positions.TEAL[0]}px)` },
       { transform: `translateY(-${slowY}px)` },
     ], triProps);
-    
+
     YELLOW_SVG.animate([
       { transform: `rotate(${positions.YELLOW[1]}deg)` },
       { transform: `rotate(${slowY}deg)` },
     ], triProps);
-    
+
     RED_SVG.animate([
       { transform: `rotate(-${positions.RED[1]}deg)` },
       { transform: `rotate(-${slowY}deg)` },
     ], triProps);
-    
+
     TEAL_SVG.animate([
       { transform: `rotate(-${positions.TEAL[1]}deg)` },
       { transform: `rotate(-${slowY}deg)` },

@@ -16,19 +16,21 @@
     }
   }
 
-  dl {
+  ul {
+    @include m-top(3em);
 
-    div {
+    li {
       @include m-top(1em);
     }
   }
 
-  dt, dd {
+  span, a {
     display: inline-block;
     vertical-align: text-top;
   }
 
-  dt {
+  span {
+    @include m-right(.4ch);
 
     &::after {
       content: ': ';
