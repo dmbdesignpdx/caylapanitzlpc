@@ -50,4 +50,6 @@ const toggleMenu = ({ currentTarget }: Event): void => {
 };
 
 OPEN_BUTTON.addEventListener('click', toggleMenu);
-addEventListener('scroll', toggleNav, { passive: true });
+addEventListener('scroll', (): void => {
+  requestAnimationFrame(toggleNav);
+}, { passive: true });

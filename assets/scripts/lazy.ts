@@ -19,12 +19,16 @@ if (hasIO) {
     const desktop = innerWidth >= 1024;
 
     entries.forEach(({ intersectionRatio, target }) => {
+      const animate = (): void => {
+        target.classList.remove('__start');
+        observer.unobserve(target);
+      };
+
       if (
         (desktop && intersectionRatio > threshold[1]) ||
         (!desktop && intersectionRatio > threshold[0])
       ) {
-        target.classList.remove('__start');
-        observer.unobserve(target);
+        requestAnimationFrame(animate);
       }
     });
   };
