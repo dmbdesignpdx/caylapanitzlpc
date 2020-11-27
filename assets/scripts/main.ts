@@ -12,9 +12,10 @@ const YELLOW_DIV = <HTMLDivElement>document.getElementById('yellow');
 const YELLOW_SVG = <SVGSVGElement>YELLOW_DIV.querySelector('svg');
 const RED_SVG = <SVGSVGElement>RED_DIV.querySelector('svg');
 const TEAL_SVG = <SVGSVGElement>TEAL_DIV.querySelector('svg');
+// const IMAGE = <HTMLDivElement>document.querySelector('.shero-Image');
 const reduce: boolean = matchMedia('(prefers-reduced-motion)').matches;
 
-const positions = {
+const positions: Record<string, Array<number>> = {
   YELLOW: [0, 0],
   RED: [0, 0],
   TEAL: [0, 0],
@@ -25,11 +26,19 @@ const triProps: KAO = {
   duration: 100,
 };
 
+/* const toggleChange = (arg: 'contents' | 'auto'): void => {
+  if (arg !== IMAGE.style.willChange) {
+    IMAGE.style.willChange = arg;
+  }
+}; */
+
 const parallax = (): void => {
   if (pageYOffset < (innerHeight * 0.9)) {
     const fastY: number = Math.ceil(pageYOffset * 0.6);
     const midY: number = Math.ceil(pageYOffset * 0.3);
     const slowY: number = Math.ceil(pageYOffset * 0.1);
+
+    // toggleChange('contents');
 
     YELLOW_DIV.animate([
       { transform: `translateY(-${positions.YELLOW[0]}px)` },
@@ -64,13 +73,17 @@ const parallax = (): void => {
     positions.YELLOW = [fastY, slowY];
     positions.RED = [midY, slowY];
     positions.TEAL = [slowY, slowY];
-  }
+  } 
+  /* else {
+    toggleChange('auto');
+  } */
 };
 
 if (!reduce) {
   const smooth = new SmoothScroll('a[href*=\'#\']');
 
   smooth.init;
+  // toggleChange('contents');
   addEventListener('scroll', () => {
     requestAnimationFrame(parallax);
   }, { passive: true });
