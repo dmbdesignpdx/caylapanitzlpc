@@ -3,7 +3,7 @@
 {{ $scripts := false }}
 
 
-{{ if ne hugo.IsProduction }}
+{{ if eq hugo.Environment "development" }}
 
   {{ $styles = resources.Get "styles/main.scss" | toCSS }}
   

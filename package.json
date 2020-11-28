@@ -11,7 +11,7 @@
     "node": ">= 15"
   },
   "scripts": {
-    "start": "hugo serve -p 3000",
+    "start": "hugo server -p 3000",
     "build": "dato dump && hugo --minify",
     "lint": "eslint assets/scripts/**/*.ts",
     "size": "bundlesize",
