@@ -67,11 +67,14 @@
     @extend %relative;
     @extend %hidden;
     @extend %z2;
+    display: flex;
+    justify-content: center;
     border-radius: 4px;
 
     &::before {
       @extend %pseudo-content;
       @extend %block;
+      @include w(100%);
       @include p-top(125%);
       background: #eaeaea;
     }
@@ -81,8 +84,6 @@
     @extend %absolute;
     @include w;
     @include h(100%);
-    @include l(-6%);
-    @include t(0);
   }
 }
 
