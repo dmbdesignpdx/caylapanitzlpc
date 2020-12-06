@@ -2,9 +2,9 @@
 <browserconfig>
   <msapplication>
     <tile>
-      <square150x150logo src='/img/Square150x150Logo.scale-100.png'/>
-      <square310x310logo src='/img/Square310x310Logo.scale-100.png'/>
-      <wide310x150logo src='/img/Wide310x150Logo.scale-100.png'/>
+      <square150x150logo src='{{ .Site.Params.bconfig.s150 | absURL }}'/>
+      <square310x310logo src='{{ .Site.Params.bconfig.s310 | absURL }}'/>
+      <wide310x150logo src='{{ .Site.Params.bconfig.w310 | absURL }}'/>
       <TileColor>{{ .Site.Params.theme }}</TileColor>
     </tile>
   </msapplication>

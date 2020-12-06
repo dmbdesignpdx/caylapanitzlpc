@@ -112,22 +112,27 @@
 
 <meta name='author' content='{{ .Site.Author.name }}'>
 
-<link rel='canonical' href='{{ .Site.BaseURL }}'>
+<link rel='canonical' href='{{ .Permalink }}'>
 
 <meta name='format-detection' content='telephone=no,email=no'>
 
 
 <!-- Favicons -->
 
-<link rel='apple-touch-icon' href='/apple-touch-icon.png'>
+{{ range .Site.Params.favicons }}
 
-<link rel='icon' type='image/png' href='/img/favicon-192x192.png' sizes='192x192'>
+  <link
+    rel='{{ .rel }}'
+    href='{{ .href | relURL }}'
+    {{ if .type }}
+      type='{{ .type }}'
+    {{ end }}
+    {{ if .sizes }}
+      sizes='{{ .sizes }}'
+    {{ end }}
+  >
 
-<link rel='icon' type='image/png' href='/img/favicon-96x96.png' sizes='96x96'>
-
-<link rel='icon' type='image/svg+xml' href='/img/favicon.svg'>
-
-<link rel='mask-icon' href='/img/pinned-tab.svg' color='{{ .Site.Params.theme }}'>
+{{ end }}
 
 <link rel='manifest' href='{{ $manifest.RelPermalink }}'>
 
@@ -142,7 +147,7 @@
 
 <meta name='twitter:description' content='{{ .Description }}'>
 
-<meta name='twitter:image' content='{{ .Site.Params.image }}'>
+<meta name='twitter:image' content='{{ .Site.Params.image.src | absURL }}'>
 
 <meta name='twitter:image:alt' content='{{ .Description }}'>
 
@@ -156,13 +161,13 @@
 
 <meta property='og:description' content='{{ .Description }}'>
 
-<meta property='og:image' content='{{ .Site.Params.image }}'>
+<meta property='og:image' content='{{ .Site.Params.image.src | absURL }}'>
 
-<meta property='og:image:width' content='1200'>
+<meta property='og:image:width' content='{{ .Site.Params.image.width }}'>
 
-<meta property='og:image:height' content='628'>
+<meta property='og:image:height' content='{{ .Site.Params.image.height }}'>
 
-<meta property='og:image:type' content='{{ .Site.Params.type }}'>
+<meta property='og:image:type' content='{{ .Site.Params.image.type }}'>
 
 <meta property='og:url' content='{{ .Permalink }}'>
 

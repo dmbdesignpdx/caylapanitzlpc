@@ -8,22 +8,51 @@ author:
 ## Params ##
 params:
   # Theme
-  theme: "#FFEB8C"
+  theme: &thm "#ffeb8c"
 
-  # Images
-  images:
-    rich:
-      url: /img/cayla-panitz-og.png
+  # Favicons
+  favicons:
+    - rel: apple-touch-icon
+      href: img/apple-touch-icon.png
+    - rel: icon
+      href: img/favicon-192x192.png
       type: image/png
-    og:
-      url: /img/cayla-panitz-og.png
+      sizes: 192x192
+    - rel: icon
+      href: img/favicon-96x96.png
       type: image/png
+      sizes: 96x96
+    - rel: icon
+      href: img/favicon.svg
+      type: image/svg+xml
+    - rel: mask-icon
+      href: img/pinned-tab.svg
+      color: *thm
+
+  # Browserconfig
+  bconfig:
+    s150: img/Square150x150Logo.scale-100.png
+    s310: img/Square310x310Logo.scale-100.png
+    w310: img/Wide310x150Logo.scale-100.png
+
+  # Manifest
+  manifest:
+    s192: img/android-chrome-192x192.png
+    s256: img/android-chrome-256x256.png
+  
+  # Image
+  image:
+    src: img/cayla-panitz-og.png
+    type: image/png
+    width: 1200
+    height: 628
 
   # License
   license:
     name: Licensed Professional Counselor
     from: State of Oregon Board of Professional Counselors and Therapists
-    url: https://hrlb.oregon.gov/oblpct/licenseelookup/detail.asp?num=133599
+    name_url: https://hrlb.oregon.gov/oblpct/licenseelookup/detail.asp?num=133599
+    from_url: https://www.oregon.gov/OBLPCT/Pages/index.aspx
 
 
 ## Markup ##
@@ -43,7 +72,6 @@ sitemap:
 
 
 ## Build ##
-# assetDir: /src
 enableGitInfo: true
 enableRobotsTXT: true
 disableHugoGeneratorInject: true
