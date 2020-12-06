@@ -143,3 +143,9 @@ h3 {
 h2 {
   font-size: 2rem;
 }
+
+.outline {
+  @include wh(1px);
+  position: absolute;
+  overflow: hidden;
+}
