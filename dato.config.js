@@ -42,10 +42,13 @@ module.exports = (dato, root) => {
   });
 
   root.createDataFile('data/footer.yaml', 'yaml', {
-    resources: footer.resources.map(resource => ({
-      name: resource.name,
-      number: resource.number,
-    })),
+    resources: {
+      title: footer.title,
+      organizations: footer.organizations.map(org => ({
+        name: org.name,
+        number: org.number,
+      })),
+    },
     copyright: footer.copyright,
   });
 

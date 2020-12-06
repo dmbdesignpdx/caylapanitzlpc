@@ -18,11 +18,11 @@
 
       <section>
 
-        <h4>Other resources</h4>
+        <h4>{{ .resources.title }}</h4>
 
         <ul>
 
-          {{- range .resources -}}
+          {{- range .resources.organizations -}}
 
             {{- $href := print "href=sms:" .number -}}
 
